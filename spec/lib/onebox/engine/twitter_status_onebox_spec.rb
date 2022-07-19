@@ -107,40 +107,12 @@ describe Onebox::Engine::TwitterStatusOnebox do
     end
   end
 
-  context "with html" do
-    context "with a standard tweet" do
-      let(:tweet_content) { "I'm a sucker for pledges." }
+  context "without twitter client" do
+    let(:link) { "https://twitter.com/discourse/status/1428031057186627589" }
 
-      include_context "standard tweet info"
-      include_context "engines"
-
-      it_behaves_like "an engine"
-      it_behaves_like "#to_html"
-    end
-
-    context "with a quoted tweet" do
-      let(:tweet_content) do
-        "Thank you to everyone who came out for #MetInParis last night for helping us support @EMMAUSolidarite &amp;"
-      end
-
-      include_context "quoted tweet info"
-      include_context "engines"
-
-      it_behaves_like "an engine"
-      it_behaves_like '#to_html'
-      it_behaves_like "includes quoted tweet data"
-    end
-
-    context "with a featured image tweet" do
-      let(:tweet_content) do
-        "My first text message from my child! A moment that shall live on in infamy!"
-      end
-
-      include_context "featured image info"
-      include_context "engines"
-
-      it_behaves_like "an engine"
-      it_behaves_like '#to_html'
+    it "does not match the url" do
+      onebox = Onebox::Matcher.new(link, { allowed_iframe_regexes: [/.*/] }).oneboxed
+      expect(onebox).not_to be(described_class)
     end
   end
 
