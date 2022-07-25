@@ -213,9 +213,7 @@ export default Controller.extend({
       this.currentUser &&
       (q.includes("in:messages") ||
         q.includes("in:personal") ||
-        q.includes(
-          `personal_messages:${this.currentUser.get("username_lower")}`
-        ))
+        q.includes(`personal_messages:${this.currentUser.username_lower}`))
     );
   },
 

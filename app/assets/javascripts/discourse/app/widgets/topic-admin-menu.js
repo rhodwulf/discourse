@@ -230,7 +230,7 @@ export default createWidget("topic-admin-menu", {
     }
 
     if (this.get("currentUser.canManageTopic")) {
-      if (this.currentUser.get("staff")) {
+      if (this.currentUser.staff) {
         this.addActionButton({
           className: "topic-admin-change-timestamp",
           buttonClass: "popup-menu-btn",
@@ -302,7 +302,7 @@ export default createWidget("topic-admin-menu", {
         button_group: "time",
       });
 
-      if (this.currentUser.get("staff")) {
+      if (this.currentUser.staff) {
         this.addActionButton({
           icon: "list",
           buttonClass: "popup-menu-btn",

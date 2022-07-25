@@ -422,7 +422,7 @@ export default Component.extend(KeyEnterEscape, {
     return (
       (canCreatePost || composerOpened) &&
       this.currentUser &&
-      this.currentUser.get("enable_quoting")
+      this.currentUser.enable_quoting
     );
   },
 

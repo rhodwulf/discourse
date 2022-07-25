@@ -34,7 +34,7 @@ export default Component.extend({
 
   @discourseComputed
   canModifyTimer() {
-    return this.currentUser && this.currentUser.get("canManageTopic");
+    return this.currentUser && this.currentUser.canManageTopic;
   },
 
   @discourseComputed("canModifyTimer", "removeTopicTimer")

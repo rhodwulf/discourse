@@ -13,7 +13,7 @@ export default Controller.extend({
 
   @discourseComputed("siteSettings.enable_badges")
   showBadges(enableBadges) {
-    return this.currentUser.get("admin") && enableBadges;
+    return this.currentUser.admin && enableBadges;
   },
 
   @discourseComputed("router._router.currentPath")

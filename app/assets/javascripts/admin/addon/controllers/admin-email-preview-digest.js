@@ -27,7 +27,7 @@ export default Controller.extend({
 
       let username = this.username;
       if (!username) {
-        username = this.currentUser.get("username");
+        username = this.currentUser.username;
         this.set("username", username);
       }
 

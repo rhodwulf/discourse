@@ -192,7 +192,7 @@ export default Controller.extend(ModalFunctionality, {
   // Staff accounts can "take action"
   @discourseComputed("flagTopic", "selected.is_custom_flag")
   canTakeAction(flagTopic, isCustomFlag) {
-    return !flagTopic && !isCustomFlag && this.currentUser.get("staff");
+    return !flagTopic && !isCustomFlag && this.currentUser.staff;
   },
 
   @discourseComputed("selected.is_custom_flag")
@@ -316,8 +316,6 @@ export default Controller.extend(ModalFunctionality, {
 
   @discourseComputed("flagTopic", "selected.name_key")
   canSendWarning(flagTopic, nameKey) {
-    return (
-      !flagTopic && this.currentUser.get("staff") && nameKey === "notify_user"
-    );
+    return !flagTopic && this.currentUser.staff && nameKey === "notify_user";
   },
 });

@@ -22,7 +22,7 @@ export default Controller.extend(CanCheckEmails, {
   @discourseComputed("model.username")
   viewingSelf(username) {
     let currentUser = this.currentUser;
-    return currentUser && username === currentUser.get("username");
+    return currentUser && username === currentUser.username;
   },
 
   @discourseComputed("viewingSelf", "model.profile_hidden")

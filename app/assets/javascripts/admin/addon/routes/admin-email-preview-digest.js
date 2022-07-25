@@ -3,14 +3,14 @@ import DiscourseRoute from "discourse/routes/discourse";
 
 export default DiscourseRoute.extend({
   model() {
-    return EmailPreview.findDigest(this.currentUser.get("username"));
+    return EmailPreview.findDigest(this.currentUser.username);
   },
 
   afterModel(model) {
     const controller = this.controllerFor("adminEmailPreviewDigest");
     controller.setProperties({
       model,
-      username: this.currentUser.get("username"),
+      username: this.currentUser.username,
       lastSeen: oneWeekAgo(),
       showHtml: true,
     });

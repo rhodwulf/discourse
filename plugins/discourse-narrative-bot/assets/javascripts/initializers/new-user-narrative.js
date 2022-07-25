@@ -53,7 +53,7 @@ function initialize(api) {
         if (
           topic.get("isPrivateMessage") &&
           this.currentUser &&
-          this.currentUser.get("id") !== data.user_id &&
+          this.currentUser.id !== data.user_id &&
           data.user_id === -2 &&
           data.type === "created"
         ) {

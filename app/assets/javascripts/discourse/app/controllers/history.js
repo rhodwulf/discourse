@@ -185,12 +185,12 @@ export default Controller.extend(ModalFunctionality, {
 
   @discourseComputed("model.previous_hidden")
   displayShow(prevHidden) {
-    return prevHidden && this.currentUser && this.currentUser.get("staff");
+    return prevHidden && this.currentUser && this.currentUser.staff;
   },
 
   @discourseComputed("model.previous_hidden")
   displayHide(prevHidden) {
-    return !prevHidden && this.currentUser && this.currentUser.get("staff");
+    return !prevHidden && this.currentUser && this.currentUser.staff;
   },
 
   @discourseComputed(
@@ -210,7 +210,7 @@ export default Controller.extend(ModalFunctionality, {
 
   @discourseComputed()
   displayRevert() {
-    return this.currentUser && this.currentUser.get("staff");
+    return this.currentUser && this.currentUser.staff;
   },
 
   isEitherRevisionHidden: or("model.previous_hidden", "model.current_hidden"),

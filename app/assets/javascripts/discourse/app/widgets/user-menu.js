@@ -235,7 +235,7 @@ export default createWidget("user-menu", {
   },
 
   panelContents() {
-    const path = this.currentUser.get("path");
+    const path = this.currentUser.path;
     const { currentQuickAccess, titleKey } = this.state;
 
     const result = [

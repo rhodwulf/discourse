@@ -9,7 +9,7 @@ export default (type) => {
 
     model() {
       const groupName = this.modelFor("group").get("name");
-      const username = this.currentUser.get("username_lower");
+      const username = this.currentUser.username_lower;
       let filter = `topics/private-messages-group/${username}/${groupName}`;
       if (this._isArchive()) {
         filter = `${filter}/archive`;
@@ -42,7 +42,7 @@ export default (type) => {
       const currentUser = this.currentUser;
       this.searchService.set("searchContext", {
         type: "private_messages",
-        id: currentUser.get("username_lower"),
+        id: currentUser.username_lower,
         user: currentUser,
       });
     },

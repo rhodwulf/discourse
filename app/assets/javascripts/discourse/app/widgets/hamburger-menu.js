@@ -207,7 +207,7 @@ export default createWidget("hamburger-menu", {
           );
         });
 
-      const topCategoryIds = currentUser.get("top_category_ids") || [];
+      const topCategoryIds = currentUser.top_category_ids || [];
 
       topCategoryIds.forEach((id) => {
         const category = allCategories.find((c) => c.id === id);

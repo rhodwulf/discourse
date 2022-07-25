@@ -9,7 +9,7 @@ export default {
   initialize(container) {
     const currentUser = container.lookup("current-user:main");
     if (currentUser) {
-      const username = currentUser.get("username");
+      const username = currentUser.username;
       const escapedUsername = escapeRegExp(username);
       DiscourseURL.rewrite(
         new RegExp(`^/u/${escapedUsername}/?$`, "i"),

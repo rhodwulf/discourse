@@ -126,7 +126,7 @@ export default function transformPost(
   postAtts.isSmallAction =
     postType === postTypes.small_action || post.action_code === "split_topic";
   postAtts.canBookmark = !!currentUser;
-  postAtts.canManage = currentUser && currentUser.get("canManageTopic");
+  postAtts.canManage = currentUser && currentUser.canManageTopic;
   postAtts.canViewRawEmail =
     currentUser && (currentUser.id === post.user_id || currentUser.staff);
   postAtts.canArchiveTopic = !!details.can_archive_topic;

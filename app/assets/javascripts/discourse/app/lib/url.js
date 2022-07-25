@@ -251,10 +251,7 @@ const DiscourseURL = EmberObject.extend({
     if (fullPath.startsWith(myPath)) {
       const currentUser = User.current();
       if (currentUser) {
-        path = fullPath.replace(
-          myPath,
-          userPath(currentUser.get("username_lower"))
-        );
+        path = fullPath.replace(myPath, userPath(currentUser.username_lower));
       } else {
         return this.redirectTo("/login-preferences");
       }

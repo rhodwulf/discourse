@@ -14,7 +14,7 @@ export default htmlHelper((user, args) => {
     currentUser = args.hash.currentUser;
   }
 
-  if (currentUser && user.get("admin") && currentUser.get("staff")) {
+  if (currentUser && user.get("admin") && currentUser.staff) {
     return iconHTML("shield-alt", {
       label: I18n.t("user.admin", { user: name }),
     });

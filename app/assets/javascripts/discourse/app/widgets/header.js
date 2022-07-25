@@ -532,7 +532,7 @@ export default createWidget("header", {
   },
 
   toggleUserMenu() {
-    if (this.currentUser.get("read_first_notification")) {
+    if (this.currentUser.read_first_notification) {
       this.state.ringBackdrop = false;
     }
 
